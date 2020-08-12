@@ -1,0 +1,22 @@
+{
+  "name": "leetcode",
+  "version": "0.0.0",
+  "description": "算法之旅",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xieww/leetcode.git"
+  },
+  "keywords": [
+    "算法"
+  ],
+  "author": "xieww",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xieww/leetcode/issues"
+  },
+  "homepage": "https://github.com/xieww/leetcode#readme"
+}
