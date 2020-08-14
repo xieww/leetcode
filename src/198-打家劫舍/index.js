@@ -1,15 +1,16 @@
 var rob = function (nums) {
   let result = 0;
-  if (!nums || nums.length === 0) {
+  if (!nums || nums.length === 0) { // 数组为空或长度为0直接返回0
     return result;
   }
 
   const length = nums.length;
-  if (length == 1) {
+  if (length == 1) { // 数组长度为1直接返回nums[0]
     return nums[0];
   }
 
-  const arr = new Array(length + 1);
+  // 生成一个和原数组长度一样的新数组待用
+  const arr = new Array(length).fill(0);
   arr[0] = 0;
   arr[1] = nums[0];
   for (let i = 2; i <= length; i++) {
