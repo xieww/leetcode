@@ -2,7 +2,7 @@
 
 ## 思路
 
-### BFS
+### 广度优先搜索算法（英语：Breadth-First Search，缩写为BFS）
 
 - 若树节点为空则直接返回[]
 - 将树以一个 queue 队列进行存储，然后进行遍历
@@ -33,7 +33,7 @@ var largestValues = function (root) {
 };
 ```
 
-### BFS
+### 深度优先搜索（英语：Deep First Search，缩写为DFS）
 
 - DFS 解法重点是递归调用 dfs 辅助函数
 
