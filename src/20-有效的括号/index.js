@@ -43,3 +43,4 @@ console.log("()[]{} is true", isValid("()[]{}"));
 console.log("(] is false", isValid("(]"));
 console.log("([)] is false", isValid("([)]"));
 console.log("{[]} is true", isValid("{[]}"));
+console.log("{[]}) is false", isValid("{[]})"));
