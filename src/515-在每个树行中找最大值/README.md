@@ -35,17 +35,17 @@ var largestValues = function (root) {
 
 ### BFS
 
-- DFS解法重点是递归调用dfs辅助函数
+- DFS 解法重点是递归调用 dfs 辅助函数
 
 ```js
 var largestValues = function (root) {
- const result = [];
+  const result = [];
   const dfs = (node, level) => {
     if (!node) return;
     // 判断result[level]是否存在
     if (result[level] === void 0) {
-      result[level] = -Infinity
-    };
+      result[level] = -Infinity;
+    }
     result[level] = Math.max(result[level], node.val);
     dfs(node.left, level + 1);
     dfs(node.right, level + 1);
@@ -53,8 +53,6 @@ var largestValues = function (root) {
   dfs(root, 0);
   return result;
 };
-
-
 ```
 
 [LeetCode 原题](https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row)

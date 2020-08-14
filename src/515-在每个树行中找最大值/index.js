@@ -28,9 +28,9 @@ var largestValues = function (root) {
     if (!node) return;
     // 判断result[level]是否存在
     if (result[level] === void 0) {
-      result[level] = -Infinity
-    };
-    result[level] = Math.max(result[level], node.val);
+      result[level] = -Infinity;
+    }
+    result[level] = Math.max(result[level], node.val); // 找出最大值
     dfs(node.left, level + 1);
     dfs(node.right, level + 1);
   };
