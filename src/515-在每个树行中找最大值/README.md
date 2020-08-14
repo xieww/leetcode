@@ -4,10 +4,10 @@
 
 ### BFS
 
-* 若树节点为空则直接返回[]
-* 将树以一个queue队列进行存储，然后进行遍历
-* 层级最大值max初始值设为-Infinity，依次从队列中读取节点和当前max进行比较，重置max
-* 若存在左右子树则将其分别存进queue队列
+- 若树节点为空则直接返回[]
+- 将树以一个 queue 队列进行存储，然后进行遍历
+- 层级最大值 max 初始值设为-Infinity，依次从队列中读取节点和当前 max 进行比较，重置 max
+- 若存在左右子树则将其分别存进 queue 队列
 
 ```js
 var largestValues = function (root) {
@@ -25,6 +25,23 @@ var largestValues = function (root) {
     }
     result.push(max);
   }
+  return result;
+};
+```
+
+### BFS
+
+```js
+var largestValues = function (root) {
+  const result = [];
+  const dfs = (node, level) => {
+    if (!node) return;
+    if (result[level] === void 0) result[level] = -Infinity;
+    result[level] = Math.max(result[level], node.val);
+    dfs(node.left, level + 1);
+    dfs(node.right, level + 1);
+  };
+  dfs(root, 0);
   return result;
 };
 ```
