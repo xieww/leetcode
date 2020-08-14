@@ -1,11 +1,13 @@
 var rob = function (nums) {
   let result = 0;
-  if (!nums || nums.length === 0) { // 数组为空或长度为0直接返回0
+  if (!nums || nums.length === 0) {
+    // 数组为空或长度为0直接返回0
     return result;
   }
 
   const length = nums.length;
-  if (length == 1) { // 数组长度为1直接返回nums[0]
+  if (length == 1) {
+    // 数组长度为1直接返回nums[0]
     return nums[0];
   }
 
