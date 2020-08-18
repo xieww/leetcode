@@ -18,3 +18,6 @@ var maxDepth = function (root) {
   return Math.max(left, right) + 1;
 };
 ```
+
+[LeetCode 原题](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+
