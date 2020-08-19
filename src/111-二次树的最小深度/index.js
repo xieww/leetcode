@@ -25,3 +25,9 @@ var minDepth = function (root) {
   }
   return depth + 1;
 };
+
+console.log("[1,2] should be 2", minDepth([1, 2]));
+console.log(
+  "[3,9,20,null,null,15,7] should be 3",
+  minDepth([3, 9, 20, null, null, 15, 7])
+);
