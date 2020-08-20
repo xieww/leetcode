@@ -31,3 +31,4 @@ var minDepth = function (root) {
   return depth + 1;
 };
 ```
+[LeetCode 原题](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree)

@@ -17,3 +17,5 @@ var mergeTwoLists = function (l1, l2) {
   }
 };
 ```
+
+[LeetCode 原题](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
