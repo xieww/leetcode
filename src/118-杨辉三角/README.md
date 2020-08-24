@@ -25,3 +25,5 @@ var generate = function (numRows) {
   return result;
 };
 ```
+
+[LeetCode 原题](https://leetcode-cn.com/problems/pascals-triangle/)
