@@ -4,6 +4,11 @@
 
 ### 思路
 
+### 思路
+
+- 时间复杂度 O(1)
+- 空间复杂度 O(1)
+
 ```js
 var rotate = function (nums, k) {
   if (!nums || nums.length <= 1) {
@@ -16,6 +21,11 @@ var rotate = function (nums, k) {
 ```
 
 ## 方法 2
+
+### 思路
+
+- 时间复杂度 O(1)
+- 空间复杂度 O(1)
 
 ```js
 var rotate = function (nums, k) {
@@ -30,6 +40,11 @@ var rotate = function (nums, k) {
 
 ## 方法 3
 
+### 思路
+
+- 时间复杂度 O(1)
+- 空间复杂度 O(1)
+
 ```js
 var rotate = function (nums, k) {
   if (!nums || nums.length <= 1) {
@@ -42,6 +57,11 @@ var rotate = function (nums, k) {
 ```
 
 ## 方法 4
+
+### 思路
+
+- 时间复杂度 O(k),n 为数组长度
+- 空间复杂度 O(1)
 
 ```js
 var rotate = function (nums, k) {
@@ -56,6 +76,11 @@ var rotate = function (nums, k) {
 ```
 
 ## 方法 5
+
+### 思路
+
+- 时间复杂度 O(n-k),n 为数组长度
+- 空间复杂度 O(1)
 
 ```js
 var rotate = function (nums, k) {
