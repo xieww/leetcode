@@ -2,6 +2,11 @@
 
 ## 思路
 
+- num1 和 num2 先补 0 对齐，保持长度一致
+- 从后往前依次对每一位做加法运算，sum 大于 9 则向前进位
+- 时间复杂度为 O(n),n 为字符串长度
+- 空间复杂度为 O(1)
+
 ```js
 var addStrings = (num1, num2) => {
   while (num1.length > num2.length) num2 = "0" + num2;
