@@ -2,6 +2,9 @@
 
 ## 思路
 
+* 先将字符串s根据空格分隔成数组，翻转数组中每个元素，然后按照空格将数组拼接成字符串
+* 时间复杂度为O(n),n为数组arr的长度
+
 ```js
 var reverseWords = function (s) {
   const arr = s.split(" ");
