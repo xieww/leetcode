@@ -5,7 +5,7 @@
 var PredictTheWinner = function (nums) {
   const helper = (l, r) => {
     // l r是两端的索引
-    if (l == r) {
+    if (l === r) {
       // 递归的出口，当l===r时，只有一个选择，并且没有剩余可选
       return nums[l];
     }
