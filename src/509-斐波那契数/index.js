@@ -2,7 +2,7 @@
  * @param {number} N
  * @return {number}
  */
-// 方法1
+// 方法1（暴力递归）
 // var fib = function (N) {
 //   if (N <= 1) {
 //     return N;
@@ -10,7 +10,7 @@
 //   return fib(N - 1) + fib(N - 2);
 // };
 
-// 方法2
+// 方法2（动态规划）
 // var fib = function (N) {
 //   let result = new Array(N + 1);
 //   result[0] = 0;
@@ -21,7 +21,7 @@
 //   return result[N];
 // };
 
-// 方法3
+// 方法3（动态规划）
 // var fib = function (N) {
 //   if (N <= 1) {
 //     return N;
@@ -35,7 +35,7 @@
 //   return sum;
 // };
 
-// 方法4
+// 方法4（动态规划）
 var fib = function (N) {
   if (N <= 1) return N;
 
