@@ -30,6 +30,7 @@
 //   return ~~(n / 5) + trailingZeroes(~~(n / 5));
 // };
 
+// 方法4
 var trailingZeroes = function (n) {
   var count = 0;
   while (n >= 5) {
