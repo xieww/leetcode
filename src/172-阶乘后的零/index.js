@@ -23,11 +23,20 @@
 // };
 
 // 方法3
+// var trailingZeroes = function (n) {
+//   if (n === 0) {
+//     return 0;
+//   }
+//   return ~~(n / 5) + trailingZeroes(~~(n / 5));
+// };
+
 var trailingZeroes = function (n) {
-  if (n === 0) {
-    return 0;
+  var count = 0;
+  while (n >= 5) {
+    count += (n / 5) | 0;
+    n /= 5;
   }
-  return ~~(n / 5) + trailingZeroes(~~(n / 5));
+  return count;
 };
 
 console.log("should be 0", trailingZeroes(3));
