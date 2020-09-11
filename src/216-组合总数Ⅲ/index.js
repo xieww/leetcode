@@ -19,25 +19,25 @@
 // };
 
 // 方法2
-// var combinationSum3 = function (k, n) {
-//   let result = [];
+var combinationSum3 = function (k, n) {
+  let result = [];
 
-//   var dfs = (arr, idx, sum = 0) => {
-//     if (arr.length === k && sum === n) { // 组合数组长度等于k并且组合中元素相加和等于n时结束本次循环
-//       result.push(arr);
-//       return;
-//     }
-//     for (let i = idx; i < 10; i++) {
-//       if (sum + i <= n) { // 组合中所有元素和小于n递归调用dfs
-//         dfs([...arr, i], i + 1, sum + i);
-//       }
-//     }
-//   };
+  var dfs = (arr, idx, sum = 0) => {
+    if (arr.length === k && sum === n) { // 组合数组长度等于k并且组合中元素相加和等于n时结束本次循环
+      result.push(arr);
+      return;
+    }
+    for (let i = idx; i < 10; i++) {
+      if (sum + i <= n) { // 组合中所有元素和小于n递归调用dfs
+        dfs([...arr, i], i + 1, sum + i);
+      }
+    }
+  };
 
-//   dfs([], 1, 0);
+  dfs([], 1, 0);
 
-//   return result;
-// };
+  return result;
+};
 
 console.log("should be", combinationSum3(3, 7));
 console.log("should be", combinationSum3(3, 9));
