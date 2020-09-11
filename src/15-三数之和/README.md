@@ -16,7 +16,13 @@
 ]
 ```
 
+## 思路
+
+- 先数组进行排序，然后用三个 for 循环遍历数组
+- i，j，k 对应的元素之和等于 0 就是目标三元组
+
 ```js
+// 暴力破解
 var threeSum = function (nums) {
   let result = [];
 
@@ -28,8 +34,7 @@ var threeSum = function (nums) {
     for (let j = i + 1; j < nums.length - 1; j++) {
       for (let k = j + 1; k < nums.length; k++) {
         if (nums[i] + nums[j] + nums[k] === 0) {
-          const item = [nums[i], nums[j], nums[k]];
-          result.push(item);
+          result.push([nums[i], nums[j], nums[k]]);
         }
       }
     }
@@ -40,4 +45,4 @@ var threeSum = function (nums) {
 
 来源：力扣（LeetCode）  
 链接：[LeetCode 原题](https://leetcode-cn.com/problems/3sum)  
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。  
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。

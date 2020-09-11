@@ -13,8 +13,7 @@ var threeSum = function (nums) {
     for (let j = i + 1; j < nums.length - 1; j++) {
       for (let k = j + 1; k < nums.length; k++) {
         if (nums[i] + nums[j] + nums[k] === 0) {
-          const item = [nums[i], nums[j], nums[k]];
-          result.push(item);
+          result.push([nums[i], nums[j], nums[k]]);
         }
       }
     }
