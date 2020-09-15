@@ -10,7 +10,7 @@
  * @param {number} sum
  * @return {boolean}
  */
-// 精简版
+// 方法1 精简版
 // var hasPathSum = function (root, sum) {
 //   return root
 //     ? !root.left && !root.right
@@ -33,4 +33,25 @@ var hasPathSum = function (root, sum) {
       hasPathSum(root.right, sum - root.val)
     );
   }
+};
+
+// 方法2
+var hasPathSum = function (root, sum) {
+  if (!root) return false;
+  let queue = [root];
+  while (queue.length > 0) {
+    let cur = queue.shift();
+    if (!cur.left && !cur.right && cur.val == sum) {
+      return true;
+    }
+    if (cur.left) {
+      cur.left.val += cur.val;
+      queue.push(cur.left);
+    }
+    if (cur.right) {
+      cur.right.val += cur.val;
+      queue.push(cur.right);
+    }
+  }
+  return false;
 };
