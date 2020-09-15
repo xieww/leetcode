@@ -13,6 +13,11 @@
 如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。
 ```
 
+## 思路
+
+- 初始最大值标记为 -Number.MAX_VALUE 或者 -Infinity，prev 标记为 0，循环数组，找出 prev + nums[i]和 nums[i]最大值，重置当前 prev，同样要找出 prev 和 max 中的最大值，将 max 重新赋值
+- 时间复杂度 O(n)
+
 ```js
 var maxSubArray = function (nums) {
   let prev = 0;
