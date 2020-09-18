@@ -6,8 +6,12 @@
  * var param_3 = obj.top()
  * var param_4 = obj.getMin()
  */
+
 /**
- * initialize your data structure here.
+ * @description initialize your data structure here.
+ * @author xieww
+ * @date 2020-09-18
+ * @class MinStack
  */
 class MinStack {
   constructor() {
