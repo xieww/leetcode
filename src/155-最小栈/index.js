@@ -37,13 +37,17 @@ class MinStack {
    * @return {number}
    */
   top() {
-    return this.stackItems[this.stackItems.length - 1].value;
+    return this.stackItems.length > 0
+      ? this.stackItems[this.stackItems.length - 1].value
+      : void 0;
   }
   /**
    * @return {number}
    */
   getMin() {
-    return this.stackItems[this.stackItems.length - 1].min;
+    return this.stackItems.length > 0
+      ? this.stackItems[this.stackItems.length - 1].min
+      : void 0;
   }
 }
 
