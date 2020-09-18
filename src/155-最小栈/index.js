@@ -9,41 +9,39 @@
 /**
  * initialize your data structure here.
  */
-var MinStack = function () {
-  this.stackItems = [];
-};
-
-/**
- * @param {number} x
- * @return {void}
- */
-MinStack.prototype.push = function (x) {
-  this.stackItems.push({
-    value: x,
-    min: this.stackItems.length === 0 ? x : Math.min(x, this.getMin()),
-  });
-};
-
-/**
- * @return {void}
- */
-MinStack.prototype.pop = function () {
-  this.stackItems.pop();
-};
-
-/**
- * @return {number}
- */
-MinStack.prototype.top = function () {
-  return this.stackItems[this.stackItems.length - 1].value;
-};
-
-/**
- * @return {number}
- */
-MinStack.prototype.getMin = function () {
-  return this.stackItems[this.stackItems.length - 1].min;
-};
+class MinStack {
+  constructor() {
+    this.stackItems = [];
+  }
+  /**
+   * @param {number} x
+   * @return {void}
+   */
+  push(x) {
+    this.stackItems.push({
+      value: x,
+      min: this.stackItems.length === 0 ? x : Math.min(x, this.getMin()),
+    });
+  }
+  /**
+   * @return {void}
+   */
+  pop() {
+    this.stackItems.pop();
+  }
+  /**
+   * @return {number}
+   */
+  top() {
+    return this.stackItems[this.stackItems.length - 1].value;
+  }
+  /**
+   * @return {number}
+   */
+  getMin() {
+    return this.stackItems[this.stackItems.length - 1].min;
+  }
+}
 
 const minStack = new MinStack();
 minStack.push(-2);
