@@ -26,6 +26,10 @@ queue.empty(); // 返回 false
 假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）。
 ```
 
+## 思路
+
+* 关键点利用数组现有方法
+
 ```js
 class MyQueue {
   constructor() {
