@@ -23,13 +23,13 @@ var reverseList = function (head) {
 };
 
 // 方法2，ES6新特性（解构赋值）
-// var reverseList = function (head) {
-//   let [prev, current] = [null, head];
-//   while (current) {
-//     [current.next, prev, current] = [prev, current, current.next];
-//   }
-//   return prev;
-// };
+var reverseList = function (head) {
+  let [prev, current] = [null, head];
+  while (current) {
+    [current.next, prev, current] = [prev, current, current.next];
+  }
+  return prev;
+};
 
 // 方法3，尾递归
 var reverseList = function (head) {
