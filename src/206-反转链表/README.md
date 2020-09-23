@@ -18,19 +18,44 @@
 
 ## 思路
 
-* 时间复杂度O(n)
-* 空间复杂度O(1)
+### 方法 1，迭代法
+
+- 将单链表中每个节点的后继指针指向它的前驱节点即可
+- 时间复杂度 O(n)
+- 空间复杂度 O(1)
 
 ```js
 var reverseList = function (head) {
+  if (!head || !head.next) return head;
   var current = head;
   var prev = null; // 链尾设置为null
   while (current) {
-    current.next = prev; 
+    current.next = prev;
     prev = current;
     current = current.next;
   }
   return prev;
+};
+```
+
+### 方法 2，尾递归法
+
+- 从头节点开始，递归反转它的每一个节点，直到 null
+- 时间复杂度 O(n)
+- 空间复杂度 O(n)
+
+```js
+var reverseList = function (head) {
+  if (!head || !head.next) return head;
+  var reverse = function (prev, current) {
+    if (!current) {
+      return prev;
+    }
+    var next = current.next;
+    current.next = prev;
+    return reverse(current, next);
+  };
+  return reverse(null, head);
 };
 ```
 
