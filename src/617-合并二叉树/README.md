@@ -28,6 +28,7 @@
 
 - t1 和 t2 同时不存在，则返回 null
 - 新树的节点值为 t1 和 t2 两棵树节点值相加，根据此规则递归遍历 t1，t2 的左右子树
+- 时间复杂度 O(n)
 
 ```js
 var mergeTrees = function (t1, t2) {

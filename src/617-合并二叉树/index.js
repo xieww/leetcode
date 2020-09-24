@@ -6,6 +6,12 @@
  * }
  */
 
+/**
+ * @description tree
+ * @author xieww
+ * @date 2020-09-24
+ * @class TreeNode
+ */
 class TreeNode {
   constructor(val) {
     this.val = val;
