@@ -49,3 +49,23 @@ var getMinimumDifference = function (root) {
   traverse(root);
   return min;
 };
+
+var getMinimumDifference = function (root) {
+  let min = Number.MAX_SAFE_INTEGER;
+  let pre = -1;
+  const dfs = (root) => {
+    if (!root) {
+      return;
+    }
+    dfs(root.left);
+    if (pre == -1) {
+      pre = root.val;
+    } else {
+      min = Math.min(min, root.val - pre);
+      pre = root.val;
+    }
+    dfs(root.right);
+  };
+  dfs(root);
+  return min;
+};
