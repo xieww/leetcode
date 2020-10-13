@@ -10,24 +10,27 @@
 
 ## 思路
 
+- 设置虚拟头结点 dummy，使得 dummy.next 始终指向第一个结点。
+- 开启 while 循环，三步完成一对结点的交换，具体见图。
+- 指针更新，在下一轮迭代中，完成下一对结点的交换。
+- 时间复杂度 O(n)，空间复杂度 O(1)
+
+![图解](./1602548103-pyYkxE-image.png)
+
 ```js
 var swapPairs = function (head) {
   const dummyHead = new ListNode(0);
   dummyHead.next = head;
-
   let prev = dummyHead;
-  let first = prev.next;
 
-  while (first && first.next) {
-    let second = first.next;
-    let next = second.next;
+  while (head && head.next) {
+    const next = head.next;
+    head.next = next.next;
+    next.next = head;
+    prev.next = next;
 
-    second.next = first;
-    first.next = next;
-    prev.next = second;
-
-    prev = first;
-    first = first.next;
+    prev = head;
+    head = head.next;
   }
 
   return dummyHead.next;
