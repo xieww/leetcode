@@ -19,7 +19,7 @@ var fib = function (N) {
   return result[N];
 };
 
-// 方法3（动态规划）
+// 方法3（动态规划）时间复杂度为O(n)，空间复杂度为O(1)
 // var fib = function (N) {
 //   if (N <= 1) {
 //     return N;
@@ -33,7 +33,7 @@ var fib = function (N) {
 //   return sum;
 // };
 
-// 方法4（动态规划）
+// 方法4（动态规划）时间复杂度为O(n)，空间复杂度为O(1)
 // var fib = function (N) {
 //   if (N <= 1) return N;
 
@@ -46,6 +46,15 @@ var fib = function (N) {
 
 //   return sum;
 // };
+
+// 方法5 黄金分割比通项公式，时间复杂度O(logN),空间复杂度O(1)
+var fib = function (n) {
+  return parseInt(
+    (Math.pow((1 + Math.sqrt(5)) / 2, n) -
+      Math.pow((1 - Math.sqrt(5)) / 2, n)) /
+    Math.sqrt(5)
+  );
+};
 
 console.log("should be 0", fib(0));
 console.log("should be 1", fib(1));
