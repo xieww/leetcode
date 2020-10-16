@@ -19,19 +19,31 @@
 // };
 
 //方法3 时间复杂度O(n)，空间复杂度O(n)
+// var sortedSquares = function (A) {
+//   let result = [];
+//   let l = 0;
+//   let r = A.length - 1;
+//   let p = r;
+//   while (l <= r) {
+//     if (A[l] ** 2 > A[r] ** 2) {
+//       result[p--] = A[l++] ** 2;
+//     } else {
+//       result[p--] = A[r--] ** 2;
+//     }
+//   }
+//   return result;
+// };
+
+// 方法4
 var sortedSquares = function (A) {
-  let result = [];
-  let l = 0;
-  let r = A.length - 1;
-  let p = r;
-  while (l <= r) {
-    if (A[l] ** 2 > A[r] ** 2) {
-      result[p--] = A[l++] ** 2;
-    } else {
-      result[p--] = A[r--] ** 2;
-    }
+  const result = [];
+  let head = 0;
+  let tail = A.length - 1;
+  while (head <= tail) {
+    if (A[head] ** 2 > A[tail] ** 2) result.push(A[head++] ** 2);
+    else result.push(A[tail--] ** 2);
   }
-  return result;
+  return result.reverse();
 };
 
 console.log("should be [0,1,9,16,100]", sortedSquares([-4, -1, 0, 3, 10]));
