@@ -57,8 +57,8 @@ typed 的每个字符，有且只有两种「用途」：
 var isLongPressedName = function (name, typed) {
   const n = name.length;
   const m = typed.length;
-  let i = 0,
-    j = 0;
+  let i = 0;
+  let j = 0;
   while (j < m) {
     if (i < n && name[i] === typed[j]) {
       i++;
