@@ -21,8 +21,8 @@
 // };
 
 var partitionLabels = function (S) {
-  let start = 0;
-  let end = 0;
+  let start = 0;// 片段起始位置
+  let end = 0;// 片段结束位置
   let result = [];
   for (let i = 0; i < S.length; i++) {
     end = Math.max(end, S.lastIndexOf(S[i]));
