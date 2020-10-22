@@ -26,7 +26,7 @@ var partitionLabels = function (S) {
   let result = [];
   for (let i = 0; i < S.length; i++) {
     end = Math.max(end, S.lastIndexOf(S[i]));
-    if (i == end) {
+    if (i === end) {
       result.push(end - start + 1);
       start = end + 1;
       end = 0;
