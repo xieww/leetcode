@@ -21,8 +21,8 @@
 // };
 
 var partitionLabels = function (S) {
-  let start = 0;// 片段起始位置
-  let end = 0;// 片段结束位置
+  let start = 0; // 片段起始位置
+  let end = 0; // 片段结束位置
   let result = [];
   for (let i = 0; i < S.length; i++) {
     end = Math.max(end, S.lastIndexOf(S[i]));
@@ -33,6 +33,24 @@ var partitionLabels = function (S) {
     }
   }
   return result;
+};
+
+var partitionLabels = function (S) {
+  let res = [];
+  let map = new Map();
+  let start = 0;
+  let end = 0;
+  for (let i = 0; i < S.length; i++) {
+    map[S[i]] = i;
+  }
+  for (let j = 0; j < S.length; j++) {
+    end = Math.max(end, map[S[j]]);
+    if (j === end) {
+      res.push(end - start + 1);
+      start = j + 1;
+    }
+  }
+  return res;
 };
 
 console.log("should be [9,7,8]", partitionLabels("ababcbacadefegdehijhklij"));
