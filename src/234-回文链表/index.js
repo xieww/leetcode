@@ -5,8 +5,9 @@
  *     this.next = null;
  * }
  */
+/*************************时间复杂度O(n)，空间复杂度O(n)**********************/
 /**
- * 方法一 时间复杂度O(n)，空间复杂度O(n)
+ * 方法一
  * @param {ListNode} head
  * @return {boolean}
  */
@@ -22,7 +23,7 @@ var isPalindrome = function (head) {
   return arr.join("") === arr.reverse().join("");
 };
 
-// 方法二，递归，时间复杂度O(n)，空间复杂度O(n)
+// 方法二，递归
 var isPalindrome = function (head) {
   let current = head;
   const traverse = (node) => {
@@ -37,7 +38,7 @@ var isPalindrome = function (head) {
   return traverse(head);
 };
 
-// 方法三 时间复杂度O(n)，空间复杂度O(n)
+// 方法三
 var isPalindrome = function (head) {
   const arr = [];
   while (head && head.val !== null) {
@@ -76,7 +77,7 @@ var isPalindrome = function (head) {
   return true;
 };
 
-// 时间复杂度O(n)，空间复杂度O(1)
+/****************时间复杂度O(n)，空间复杂度O(1)*******************/
 var isPalindrome = function (head) {
   if (!head) return true;
   let prev = head;
