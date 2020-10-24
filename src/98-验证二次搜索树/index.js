@@ -6,6 +6,7 @@
  * }
  */
 /**
+ *  递归，时间复杂度O(n)，空间复杂度O(n)
  * @param {TreeNode} root
  * @return {boolean}
  */
@@ -30,9 +31,10 @@ var isValidBST = function (root, min = -Infinity, max = Infinity) {
   );
 };
 
+// 中序遍历，时间复杂度O(n)，空间复杂度O(n)
 var isValidBST = function (root) {
   let stack = [];
-  let inorder = -Infinity;
+  let inOrder = -Infinity;
 
   while (stack.length || root !== null) {
     while (root !== null) {
@@ -40,11 +42,11 @@ var isValidBST = function (root) {
       root = root.left;
     }
     root = stack.pop();
-    // 如果中序遍历得到的节点的值小于等于前一个 inorder，说明不是二叉搜索树
-    if (root.val <= inorder) {
+    // 如果中序遍历得到的节点的值小于等于前一个 inOrder，说明不是二叉搜索树
+    if (root.val <= inOrder) {
       return false;
     }
-    inorder = root.val;
+    inOrder = root.val;
     root = root.right;
   }
   return true;
