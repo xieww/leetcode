@@ -24,22 +24,24 @@
 * 空间复杂度O(n)
 
 ```js
-if (!root) {
-  return [];
-}
-const result = [];
-const stack = [root];
-while (stack.length) {
-  const node = stack.pop();
-  result.push(node.val);
-  if (node.right) {
-    stack.push(node.right);
+var preorderTraversal = function (root) {
+  if (!root) {
+    return [];
   }
-  if (node.left) {
-    stack.push(node.left);
+  const result = [];
+  const stack = [root];
+  while (stack.length) {
+    const node = stack.pop();
+    result.push(node.val);
+    if (node.right) {
+      stack.push(node.right);
+    }
+    if (node.left) {
+      stack.push(node.left);
+    }
   }
-}
-return result;
+  return result;
+};
 ```
 
 来源：力扣（LeetCode）  
