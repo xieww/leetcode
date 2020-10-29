@@ -42,6 +42,29 @@
 从根到叶子节点路径 4->0 代表数字 40.
 因此，数字总和 = 495 + 491 + 40 = 1026.
 
+## 思路
+
+- 深度优先遍历
+- 从根节点开始遍历，若遇到叶子节点则将当前节点数字加到数字之和；若不为叶子节点，则计算其子节点对应的数字，然后对子节点进行递归遍历
+- 时间复杂度 O(n)
+- 空间复杂度 O(n)
+
+```js
+var sumNumbers = function (root) {
+  var dfs = function (node, sum) {
+    if (!node) {
+      return 0;
+    }
+    sum = sum * 10 + node.val;
+    if (!node.left && !node.right) {
+      return sum;
+    }
+    return dfs(node.left, sum) + dfs(node.right, sum);
+  };
+  return dfs(root, 0);
+};
+```
+
 来源：力扣（LeetCode）  
 链接：[LeetCode 原题](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers)  
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
