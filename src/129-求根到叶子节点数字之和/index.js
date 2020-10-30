@@ -5,6 +5,7 @@
  *     this.left = this.right = null;
  * }
  */
+/****深度优先 ，时间复杂度O(n)，空间复杂度O(n)***********/
 /**
  * @param {TreeNode} root
  * @return {number}
@@ -38,4 +39,48 @@ var sumNumbers = function (root, current = 0) {
   let value = current * 10 + root.val;
   if (root.left === null && root.right === null) return value;
   return sumNumbers(root.left, value) + sumNumbers(root.right, value);
+};
+
+var sumNumbers = function (root) {
+  var dfs = function (node, sum) {
+    if (!node) {
+      return 0;
+    }
+    sum = sum * 10 + node.val;
+    if (!node.left && !node.right) {
+      return sum;
+    }
+    return dfs(node.left, sum) + dfs(node.right, sum);
+  };
+  return dfs(root, 0);
+};
+
+/****广度优先 ，时间复杂度O(n)，空间复杂度O(n)***********/
+var sumNumbers = function(root) {
+  if (root === null) {
+      return 0;
+  }
+  let sum = 0;
+  const nodeQueue = [];
+  const numQueue = [];
+  nodeQueue.push(root);
+  numQueue.push(root.val);
+  while (nodeQueue.length) {
+      const node = nodeQueue.shift();
+      const num = numQueue.shift();
+      const left = node.left, right = node.right;
+      if (left === null && right === null) {
+          sum += num;
+      } else {
+          if (left !== null) {
+              nodeQueue.push(left);
+              numQueue.push(num * 10 + left.val);
+          }
+          if (right !== null) {
+              nodeQueue.push(right);
+              numQueue.push(num * 10 + right.val);
+          }
+      }
+  }
+  return sum;
 };
