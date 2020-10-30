@@ -15,9 +15,11 @@ var reverseList = function (head) {
   var current = head;
   var prev = null;
   while (current) {
+    // 保存下一个节点值
+    let next = current.next;
     current.next = prev; // 反转current的后继指针
     prev = current; // 交换prev、current
-    current = current.next; // current指向下一个节点
+    current = next; // current指向下一个节点
   }
   return prev;
 };
@@ -38,6 +40,7 @@ var reverseList = function (head) {
     if (!current) {
       return prev;
     }
+    // 保存下一个节点值
     var next = current.next;
     current.next = prev;
     return reverse(current, next);
