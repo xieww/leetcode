@@ -22,6 +22,37 @@
 
 ![图片](./island.png)
 
+## 思路
+
+* 若一块陆地四周都为水域或者区域边界，则四条边即为周长；若接壤区域也为陆地，则有两条边需要减掉
+* 总周长 = 4 * 陆地个数 - 2 * 接壤的边界条数
+* 时间复杂度O(nm)
+* 空间复杂度O(1)
+
+```js
+var islandPerimeter = (grid) => {
+  let land = 0; // 土地个数
+  let border = 0; // 接壤边界的条数
+
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[0].length; j++) {
+      if (grid[i][j] === 1) {
+        land++;
+        // 确定当前土地下边是否为土地
+        if (i < grid.length - 1 && grid[i + 1][j] === 1) {
+          border++;
+        }
+        // 确定当前土地右边是否为土地
+        if (j < grid[0].length - 1 && grid[i][j + 1] === 1) {
+          border++;
+        }
+      }
+    }
+  }
+  return 4 * land - 2 * border;
+};
+```
+
 来源：力扣（LeetCode）  
 链接：[LeetCode 原题](https://leetcode-cn.com/problems/island-perimeter)  
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
