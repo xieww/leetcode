@@ -19,8 +19,8 @@
 // };
 
 var canCompleteCircuit = function (gas, cost) {
-  const acquisition = gas.reduce((sum, num) => sum + num, 0);
-  const depletion = cost.reduce((sum, num) => sum + num, 0);
+  const acquisition = gas.reduce((sum, num) => sum + num, 0); // 获得的汽油量
+  const depletion = cost.reduce((sum, num) => sum + num, 0); // 消耗的汽油量
   if (acquisition < depletion) {
     return -1;
   }
