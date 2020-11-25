@@ -23,3 +23,7 @@ var sortString = function (s) {
 };
 
 console.log("should be", sortString("aaaabbbbcccc"));
+console.log("should be", sortString("rat"));
+console.log("should be", sortString("leetcode"));
+console.log("should be", sortString("ggggggg"));
+console.log("should be", sortString("spo"));
