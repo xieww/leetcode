@@ -24,11 +24,16 @@ D = [ 0, 2]
 
 ## 思路
 
+- 将数组分为两部分，A、B 为一组，C、D 为一组，双层 for 循环遍历 A 和 B，A[i]、B[j]相加的结果存入 map，key 为 A[i]+B[j]的和，value 为 A[i]+B[j]出现的次数
+- 双层 for 循环 C 和 D，若 map 中存在 key 为-(C[k]+D[l])的元素，则取出对应的值累加到结果上，遍历结束返回最终结果即可
+- 时间复杂度 O(n^2)
+- 空间复杂度 O(n^2)
+
 ```js
 var fourSumCount = function (A, B, C, D) {
   const map = new Map();
-  for (const num1 of C) {
-    for (const num2 of D) {
+  for (const num1 of A) {
+    for (const num2 of B) {
       const sum = num1 + num2;
       if (!map.has(sum)) {
         map.set(sum, 0);
@@ -38,8 +43,8 @@ var fourSumCount = function (A, B, C, D) {
   }
 
   let total = 0;
-  for (const num1 of A) {
-    for (const num2 of B) {
+  for (const num1 of C) {
+    for (const num2 of D) {
       const num = -1 * (num1 + num2);
       if (map.has(num)) {
         total += map.get(num);

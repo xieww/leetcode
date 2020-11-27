@@ -33,8 +33,8 @@
 
 var fourSumCount = function (A, B, C, D) {
   const map = new Map();
-  for (const num1 of C) {
-    for (const num2 of D) {
+  for (const num1 of A) {
+    for (const num2 of B) {
       const sum = num1 + num2;
       if (!map.has(sum)) {
         map.set(sum, 0);
@@ -44,8 +44,8 @@ var fourSumCount = function (A, B, C, D) {
   }
 
   let total = 0;
-  for (const num1 of A) {
-    for (const num2 of B) {
+  for (const num1 of C) {
+    for (const num2 of D) {
       const num = -1 * (num1 + num2);
       if (map.has(num)) {
         total += map.get(num);
