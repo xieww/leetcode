@@ -3,9 +3,6 @@
  * @return {number}
  */
 var countPrimes = function (n) {
-  if (n < 3) {
-    return 0;
-  }
   const arr = new Array(n).fill(false);
   let count = 0;
   for (let i = 2; i < n; i++) {
@@ -19,6 +16,7 @@ var countPrimes = function (n) {
   return count;
 };
 
-console.log("should be ", countPrimes(10));
-console.log("should be ", countPrimes(0));
-console.log("should be ", countPrimes(1));
+console.log("should be 4 ", countPrimes(10));
+console.log("should be 0 ", countPrimes(0));
+console.log("should be 0 ", countPrimes(1));
+console.log("should be 1 ", countPrimes(3));
