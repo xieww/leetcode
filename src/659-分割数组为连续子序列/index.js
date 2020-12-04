@@ -113,7 +113,7 @@ var isPossible = function (nums) {
       if (prevEndCount > 0) {
         countMap.set(x, count - 1);
         endMap.set(x - 1, prevEndCount - 1);
-        endMap.set(x, (endMap.get(x, 0) || 0) + 1);
+        endMap.set(x, (endMap.get(x) || 0) + 1);
       } else {
         const count1 = countMap.get(x + 1, 0);
         const count2 = countMap.get(x + 2, 0);
