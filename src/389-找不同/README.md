@@ -57,6 +57,6 @@ var findTheDifference = function (s, t) {
 };
 ```
 
-来源：力扣（LeetCode）
-链接：[LeetCode 原题](https://leetcode-cn.com/problems/find-the-difference)
+来源：力扣（LeetCode）  
+链接：[LeetCode 原题](https://leetcode-cn.com/problems/find-the-difference) 
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
