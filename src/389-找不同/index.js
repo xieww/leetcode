@@ -106,9 +106,5 @@ var findTheDifference = function (s, t) {
   }
 };
 
-document.addEventListener("click", () => {
-  debugger;
-});
-
 console.log("should be e", findTheDifference("abcd", "abcde"));
 console.log("should be a", findTheDifference("a", "aa"));
