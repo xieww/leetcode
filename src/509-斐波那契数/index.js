@@ -48,12 +48,27 @@ var fib = function (N) {
 // };
 
 // 方法5 黄金分割比通项公式，时间复杂度O(logN),空间复杂度O(1)
+// var fib = function (n) {
+//   return parseInt(
+//     (Math.pow((1 + Math.sqrt(5)) / 2, n) -
+//       Math.pow((1 - Math.sqrt(5)) / 2, n)) /
+//     Math.sqrt(5)
+//   );
+// };
+
 var fib = function (n) {
-  return parseInt(
-    (Math.pow((1 + Math.sqrt(5)) / 2, n) -
-      Math.pow((1 - Math.sqrt(5)) / 2, n)) /
-    Math.sqrt(5)
-  );
+  if (n < 1) {
+    return 0;
+  }
+  if (n === 1 || n === 2) {
+    return 1;
+  }
+  let prev = 1;
+  let curr = 1;
+  for (let i = 3; i <= n; i++) {
+    [prev, curr] = [curr, prev + curr];
+  }
+  return curr;
 };
 
 console.log("should be 0", fib(0));
