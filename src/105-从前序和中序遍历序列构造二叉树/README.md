@@ -25,6 +25,8 @@
 
 ## 思路
 
+* 时间复杂度O(n)
+* 空间复杂度O(n)
 
 ```js
 function build(preOrder, preStart, preEnd, inOrder, inStart, inEnd) {
