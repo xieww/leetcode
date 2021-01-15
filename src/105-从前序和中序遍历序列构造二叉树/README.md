@@ -26,7 +26,6 @@
 ## 思路
 
 
-
 ```js
 function build(preOrder, preStart, preEnd, inOrder, inStart, inEnd) {
   // 若起始索引大于终止索引，则返回null
