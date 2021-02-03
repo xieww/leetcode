@@ -46,33 +46,35 @@ function NestedInteger(val, list) {
  * @constructor
  * @param {NestedInteger[]} nestedList
  */
-var NestedIterator = function (nestedList) {
-  this.list = nestedList;
-};
+class NestedIterator {
+  constructor(nestedList) {
+    this.list = nestedList;
+  }
 
-/**
- * @this NestedIterator
- * @returns {boolean}
- */
-NestedIterator.prototype.hasNext = function () {
-  while (this.list.length !== 0) {
-    if (this.list[0].isInteger()) {
-      return true;
-    } else {
-      let cur = this.list[0].getList();
-      this.list.shift();
-      this.list.unshift(...cur);
+  /**
+   * @this NestedIterator
+   * @returns {boolean}
+   */
+  hasNext() {
+    while (this.list.length !== 0) {
+      if (this.list[0].isInteger()) {
+        return true;
+      } else {
+        let cur = this.list[0].getList();
+        this.list.shift();
+        this.list.unshift(...cur);
+      }
     }
   }
-};
 
-/**
- * @this NestedIterator
- * @returns {integer}
- */
-NestedIterator.prototype.next = function () {
-  return this.list.shift().getInteger();
-};
+  /**
+   * @this NestedIterator
+   * @returns {integer}
+   */
+  next() {
+    return this.list.shift().getInteger();
+  }
+}
 
 /**
  * Your NestedIterator will be called like this:
