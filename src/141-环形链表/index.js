@@ -7,6 +7,8 @@
  */
 
 /**
+ * 快慢指针
+ * 时间复杂度O(n)，空间复杂度O(1)
  * @param {ListNode} head
  * @return {boolean}
  */
@@ -26,6 +28,7 @@ var hasCycle = function (head) {
   return false;
 };
 
+// 时间复杂度O(n)，空间复杂度O(n)
 // var hasCycle = function (head) {
 //   if (!head || !head.next) return false;
 //   let set = new Set();
@@ -37,3 +40,19 @@ var hasCycle = function (head) {
 //   }
 //   return false;
 // };
+
+const linkList = {
+  val: 3,
+  next: {
+    val: 2,
+    next: {
+      val: 0,
+      next: {
+        val: 4,
+        next: null,
+      },
+    },
+  },
+};
+
+console.log(hasCycle(linkList));
