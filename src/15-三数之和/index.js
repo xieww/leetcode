@@ -85,4 +85,40 @@ var threeSum = function (nums) {
 //   return result;
 // };
 
+// var threeSum = function (nums) {
+//   let set = new Set(); // 使用 Set() 即可满足需求, 相对节省内存
+//   let result = [];
+//   nums.sort((a, b) => a - b);
+
+//   for (let i = 0; i < nums.length - 2; i++) {
+//     while (nums[i] === nums[i - 1]) {
+//       i++;
+//     } // 去重
+//     // 第一个数
+//     let first = nums[i];
+//     let j = i + 1;
+//     while (j < nums.length) {
+//       // 第三个数
+//       let second = 0 - nums[j] - first;
+//       let third = nums[j];
+
+//       if (set.has(second)) {
+//         result.push([first, second, third]);
+
+//         set.add(third);
+//         j++;
+
+//         while (nums[j] === nums[j - 1]) {
+//           j++;
+//         } // 去重
+//       } else {
+//         set.add(third);
+//         j++;
+//       }
+//     }
+//     set = new Set();
+//   }
+//   return result;
+// };
+
 console.log("should be ", threeSum([-1, 0, 1, 2, -1, -4]));
