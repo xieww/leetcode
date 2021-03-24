@@ -17,22 +17,40 @@
 //   return carry === 1 ? "1" + result : result;
 // };
 
+// var addStrings = (num1, num2) => {
+//   let result = "";
+//   let carry = 0;
+//   for (
+//     let i = num1.length - 1, j = num2.length - 1;
+//     i >= 0 || j >= 0;
+//     i--, j--
+//   ) {
+//     const n1 = num1[i] >= 0 ? +num1[i] : 0;
+//     const n2 = num2[j] >= 0 ? +num2[j] : 0;
+//     const sum = n1 + n2 + carry;
+//     result = (sum % 10) + result;
+//     carry = (sum / 10) | 0;
+//   }
+//   carry && (result = "1" + result);
+//   return result;
+// };
+
 var addStrings = (num1, num2) => {
-  let result = "";
-  let carry = 0;
-  for (
-    let i = num1.length - 1, j = num2.length - 1;
-    i >= 0 || j >= 0;
-    i--, j--
-  ) {
-    const n1 = num1[i] >= 0 ? +num1[i] : 0;
-    const n2 = num2[j] >= 0 ? +num2[j] : 0;
-    const sum = n1 + n2 + carry;
-    result = (sum % 10) + result;
-    carry = (sum / 10) | 0;
+  const maxLength = Math.max(num1.length, num2.length);
+  num1 = num1.padStart(maxLength, 0);
+  num2 = num2.padStart(maxLength, 0);
+  let sum = "";
+  let x = 0;
+  let y = 0; // 进位
+  for (let i = maxLength - 1; i >= 0; i--) {
+    x = parseInt(num1[i]) + parseInt(num2[i]) + y;
+    y = Math.floor(x / 10);
+    sum = (x % 10) + sum;
   }
-  carry && (result = "1" + result);
-  return result;
+  if (y === 1) {
+    sum = "1" + sum;
+  }
+  return sum;
 };
 
 console.log("should be 0", addStrings("0", "0"));
