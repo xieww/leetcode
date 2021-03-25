@@ -11,3 +11,6 @@ var climbStairs = function (n) {
   }
   return dp[n];
 };
+
+console.log("should be 2", climbStairs(2));
+console.log("should be 3", climbStairs(3));
