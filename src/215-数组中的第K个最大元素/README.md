@@ -4,15 +4,21 @@
 
 示例 1:
 
+```text
 输入: [3,2,1,5,6,4] 和 k = 2
 输出: 5
+```
+
 示例  2:
 
+```text
 输入: [3,2,3,1,2,4,5,5,6] 和 k = 4
 输出: 4
+```
+
 说明:
 
-你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。
+- 你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。
 
 来源：力扣（LeetCode）  
 链接：[LeetCode 原题](https://leetcode-cn.com/problems/kth-largest-element-in-an-array)  

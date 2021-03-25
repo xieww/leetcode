@@ -3,9 +3,9 @@
  * @param {number} k
  * @return {number}
  */
-var findKthLargest = function (nums, k) {
-  return quickSelect(nums, 0, nums.length - 1, k);
-};
+// var findKthLargest = function (nums, k) {
+//   return quickSelect(nums, 0, nums.length - 1, k);
+// };
 
 function quickSelect(arr, start, end, k) {
   const pivotIndex = partition(arr, start, end);
@@ -41,3 +41,12 @@ function partition(arr, start, end) {
 function swap(arr, i, j) {
   [arr[i], arr[j]] = [arr[j], arr[i]];
 }
+
+// 时间复杂度：O(nlogn)，空间复杂度：O(logn)
+var findKthLargest = function (nums, k) {
+  nums.sort((a, b) => b - a);
+  return nums[k - 1];
+};
+
+console.log("should be 5", findKthLargest([3, 2, 1, 5, 6, 4], 2));
+console.log("should be 4", findKthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4));

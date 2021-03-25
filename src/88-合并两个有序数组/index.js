@@ -9,12 +9,40 @@
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
+// var merge = function (nums1, m, nums2, n) {
+//   nums1.splice(m);
+//   nums1.push.apply(nums1, nums2.slice(0, n));
+//   nums1.sort((a, b) => a - b);
+//   return nums1;
+// };
+
 var merge = function (nums1, m, nums2, n) {
-  nums1.splice(m);
-  nums1.push.apply(nums1, nums2.slice(0, n));
-  nums1.sort((a, b) => a - b);
+  var insertPos = m + n - 1;
+  m--;
+  n--;
+  while (n >= 0) {
+    nums1[insertPos--] =
+      (m >= 0 && nums1[m] > nums2[n]) ? nums1[m--] : nums2[n--];
+  }
   return nums1;
 };
+
+// var merge = function (nums1, m, nums2, n) {
+//   let i = m - 1;
+//   let j = n - 1;
+//   let k = m + n - 1;
+//   while (i >= 0 && j >= 0) {
+//     if (nums1[i] > nums2[j]) {
+//       nums1[k--] = nums1[i--];
+//     } else {
+//       nums1[k--] = nums2[j--];
+//     }
+//   }
+//   while (j >= 0) {
+//     nums1[k--] = nums2[j--];
+//   }
+//   return nums1;
+// };
 
 console.log(
   "should be [ 1, 2, 2, 3, 5, 6 ]",
