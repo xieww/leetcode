@@ -12,19 +12,19 @@ var numIslands = function (grid) {
     }
 
     if (x < grid.length - 1) {
-      depthSearch(x + 1, y);
+      depthSearch(x + 1, y);// ⬇️向下搜索
     }
 
     if (y < grid[x].length - 1) {
-      depthSearch(x, y + 1);
+      depthSearch(x, y + 1);// ➡️向右搜索
     }
 
     if (x > 0 && x < grid.length) {
-      depthSearch(x - 1, y);
+      depthSearch(x - 1, y);// ⬆️向上退回
     }
 
     if (y > 0 && y < grid[x].length) {
-      depthSearch(x, y - 1);
+      depthSearch(x, y - 1);// ⬅️向左退回
     }
   }
 
@@ -52,10 +52,10 @@ var numIslands = function (grid) {
       return;
     }
     grid[i][j] = "0";
-    dfs(i - 1, j); // up
-    dfs(i + 1, j); // down
-    dfs(i, j - 1); // left
-    dfs(i, j + 1); // right
+    dfs(i - 1, j); // ⬆️向上退回(up)
+    dfs(i + 1, j); // ⬇️向下搜索(down)
+    dfs(i, j - 1); // ⬅️向左退回(left)
+    dfs(i, j + 1); // ➡️向右搜索(right)
   };
 
   let count = 0;
