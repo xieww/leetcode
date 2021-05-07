@@ -16,15 +16,39 @@
 //   return nums1;
 // };
 
-var merge = function (nums1, m, nums2, n) {
-  var insertPos = m + n - 1;
-  m--;
-  n--;
-  while (n >= 0) {
-    nums1[insertPos--] =
-      (m >= 0 && nums1[m] > nums2[n]) ? nums1[m--] : nums2[n--];
+// var merge = function (nums1, m, nums2, n) {
+//   var insertPos = m + n - 1;
+//   m--;
+//   n--;
+//   while (n >= 0) {
+//     nums1[insertPos--] =
+//       m >= 0 && nums1[m] > nums2[n] ? nums1[m--] : nums2[n--];
+//   }
+//   return nums1;
+// };
+
+var merge = function (left, m, right, n) {
+  let i = 0;
+  let j = 0;
+  const temp = [];
+  while (i < m && j < n) {
+    if (left[i] < right[j]) {
+      temp.push(left[i]);
+      i++;
+    } else {
+      temp.push(right[j]);
+      j++;
+    }
   }
-  return nums1;
+  while (i < m) {
+    temp.push(left[i]);
+    i++;
+  }
+  while (j < n) {
+    temp.push(right[j]);
+    j++;
+  }
+  return temp;
 };
 
 // var merge = function (nums1, m, nums2, n) {
