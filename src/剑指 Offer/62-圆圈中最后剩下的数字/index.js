@@ -24,5 +24,18 @@ var lastRemaining = function (n, m) {
   return result;
 };
 
+// var lastRemaining = function (n, m) {
+//   const arr = new Array(n).fill().map((_, index) => index);
+//   let count = 0;
+//   let i = 0;
+//   while (arr.length > 1) {
+//     count++;
+//     i += m - 1;
+//     i = i % arr.length;
+//     arr.splice(i, 1);
+//   }
+//   return arr[0];
+// };
+
 console.log(lastRemaining(5, 3));
 console.log(lastRemaining(10, 17));
