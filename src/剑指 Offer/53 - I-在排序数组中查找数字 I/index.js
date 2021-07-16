@@ -71,38 +71,50 @@
 //   return start <= end && start !== -1 ? end - start + 1 : 0;
 // };
 
-var search = function (nums, target) {
-  // 搜索右边界 right
-  let i = 0;
-  let j = nums.length - 1;
-  while (i <= j) {
-    let m = Math.floor((i + j) / 2);
-    if (nums[m] <= target) {
-      i = m + 1;
-    } else {
-      j = m - 1;
-    }
-  }
+// var search = function (nums, target) {
+//   // 搜索右边界 right
+//   let i = 0;
+//   let j = nums.length - 1;
+//   while (i <= j) {
+//     let m = Math.floor((i + j) / 2);
+//     if (nums[m] <= target) {
+//       i = m + 1;
+//     } else {
+//       j = m - 1;
+//     }
+//   }
 
-  let right = i;
-  if (j >= 0 && nums[j] !== target) {
-    return 0;
+//   let right = i;
+//   if (j >= 0 && nums[j] !== target) {
+//     return 0;
+//   }
+//   // 搜索左边界 right
+//   i = 0;
+//   j = nums.length - 1;
+//   while (i <= j) {
+//     let m = Math.floor((i + j) / 2);
+//     if (nums[m] < target) {
+//       i = m + 1;
+//     } else {
+//       j = m - 1;
+//     }
+//   }
+//   let left = j;
+//   return right - left - 1;
+// };
+
+function search(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+  while (nums[left] !== target && left < nums.length) {
+    left++;
   }
-  // 搜索左边界 right
-  i = 0;
-  j = nums.length - 1;
-  while (i <= j) {
-    let m = Math.floor((i + j) / 2);
-    if (nums[m] < target) {
-      i = m + 1;
-    } else {
-      j = m - 1;
-    }
+  while (nums[right] !== target && right >= 0) {
+    right--;
   }
-  let left = j;
-  return right - left - 1;
-};
+  return left <= right ? right - left + 1 : 0;
+}
 
 const arr = [5, 7, 7, 8, 8, 10];
-console.log(search(arr, 8));
-console.log(search(arr, 6));
+console.log("should be 2", search(arr, 8));
+console.log("should be 0", search(arr, 6));
