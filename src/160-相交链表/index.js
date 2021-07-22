@@ -14,6 +14,7 @@ class ListNode {
 }
 
 /**
+ * 时间复杂度O(n)，空间复杂度O(1)
  * @param {ListNode} headA
  * @param {ListNode} headB
  * @return {ListNode}
