@@ -44,7 +44,7 @@
 
 示例 4：
 
-````js
+```js
 输入：head = []
 输出：[]
 解释：给定的链表为空（空指针），因此返回 null。
@@ -60,4 +60,3 @@
 来源：力扣（LeetCode）
 链接：[LeetCode 原题](https://leetcode-cn.com/problems/copy-list-with-random-pointer)
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-````
