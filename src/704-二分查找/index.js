@@ -1,3 +1,4 @@
+// 左闭右闭[left,right]
 var search = function (nums, target) { // 二分查找
     let left = 0; // 左指针
     let right = nums.length - 1; // 右指针
@@ -13,6 +14,7 @@ var search = function (nums, target) { // 二分查找
     }
 };
 
+// 左闭右开[left,right)
 // var search = function (nums, target) { // 二分查找
 //     let left = 0;
 //     let right = nums.length - 1;
