@@ -53,38 +53,38 @@
 // }
 
 // 方法6
-var searchInsert = function (nums, target) {
-  const len = nums.length;
-  let left = 0;
-  let right = len - 1;
-  let result = len;
-  while (left <= right) {
-    let mid = ((right - left) >> 1) + left;
-    if (target <= nums[mid]) {
-      result = mid;
-      right = mid - 1;
-    } else {
-      left = mid + 1;
-    }
-  }
-  return result;
-};
-
-// var searchInsert = function (nums, target) { // 插入查找
+// var searchInsert = function (nums, target) {
+//   const len = nums.length;
 //   let left = 0;
-//   let right = nums.length - 1;
+//   let right = len - 1;
+//   let result = len;
 //   while (left <= right) {
-//       const mid = Math.floor((left + right) / 2);
-//       if (nums[mid] > target) {
-//           right = mid - 1;
-//       } else if (nums[mid] < target) {
-//           left = mid + 1;
-//       } else {
-//           return mid;
-//       }
+//     let mid = ((right - left) >> 1) + left;
+//     if (target <= nums[mid]) {
+//       result = mid;
+//       right = mid - 1;
+//     } else {
+//       left = mid + 1;
+//     }
 //   }
-//   return left;
+//   return result;
 // };
+
+var searchInsert = function (nums, target) { // 插入查找
+  let left = 0;
+  let right = nums.length - 1;
+  while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+      if (nums[mid] > target) {
+          right = mid - 1;
+      } else if (nums[mid] < target) {
+          left = mid + 1;
+      } else {
+          return mid;
+      }
+  }
+  return left; // 返回 left 或者(right+1),结果都正确, 如果没有找到，返回插入位置
+};
 
 // var searchInsert = function (nums, target) { // 插入查找
 //   for (let i = 0; i < nums.length; i++) {
