@@ -44,7 +44,7 @@ var preorderTraversal = function (root) {
   return result;
 };
 
-//方法，迭代，3时间复杂度O(n)，空间复杂度O(n)
+//方法，迭代，时间复杂度O(n)，空间复杂度O(n)
 var preorderTraversal = function (root) {
   const result = [];
   const stack = [];
